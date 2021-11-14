@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace CompraCerta
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double valor, prest, vtotal;
+            int qtd;
+            string prdt;
+            
+            Console.WriteLine("==============================================");
+            Console.Write(" Qual Produto está comprando? : ");
+            prdt = (Console.ReadLine());
+            Console.Write(" Qual o valor deste produto?  : ");
+            valor = double.Parse(Console.ReadLine());
+            Console.Write(" Quantas unidades desse produto você comprou? : ");
+            qtd = int.Parse(Console.ReadLine());
+
+            vtotal = valor*qtd;
+            prest = vtotal/3;
+
+            Console.WriteLine("-----------------------------------------------");
+            
+            if (vtotal > 300)
+            {
+                Console.WriteLine(" A quantidade de "+prdt+ " foi de "+qtd+" e o total da compra de R$" 
+                + vtotal.ToString("N1") + "\n O cliente vai pagar 3 prestações de R$" +prest.ToString("N2")+ " -- Bom Cliente");
+            }
+            else
+            {
+                Console.WriteLine(" A quantidade de "+prdt+ " foi de " + qtd + " e o total da compra de R$"
+                + vtotal.ToString("N1") + "\n O cliente vai pagar 3 prestações de R$" + prest.ToString("N2") + " -- Cliente Mediano");
+            }
+
+            Console.WriteLine("==============================================");
+            Console.ReadKey();
+            
+            /* Muito bom a tarefa, fiz isso as 23:56 da data de 13/11/2021, Amanda Fernandes Sena*/
+        }
+    }
+}
